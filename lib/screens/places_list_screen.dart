@@ -25,26 +25,38 @@ class _PlacesListScreenState extends State<PlacesListScreen> {
           ),
         ],
       ),
-      body: Consumer<GreatPlaces>(
-        builder: (ctx, greatPlaces, Widget? ch) => greatPlaces.items.isNotEmpty
-            ? ListView.builder(
-                itemCount: greatPlaces.items.length,
-                itemBuilder: (BuildContext context, int index) => ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: FileImage(
-                      greatPlaces.items[index].image,
-                    ),
+      body: FutureBuilder(
+        future: Provider.of<GreatPlaces>(context, listen: false)
+            .fetchAndSetPlaces(),
+        builder: (ctx, snapshot) =>
+            snapshot.connectionState == ConnectionState.waiting
+                ? const Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : Consumer<GreatPlaces>(
+                    builder: (ctx, greatPlaces, Widget? ch) =>
+                        greatPlaces.items.isNotEmpty
+                            ? ListView.builder(
+                                itemCount: greatPlaces.items.length,
+                                itemBuilder:
+                                    (BuildContext context, int index) =>
+                                        ListTile(
+                                  leading: CircleAvatar(
+                                    backgroundImage: FileImage(
+                                      greatPlaces.items[index].image,
+                                    ),
+                                  ),
+                                  title: Text(greatPlaces.items[index].title),
+                                  onTap: () {},
+                                ),
+                              )
+                            : const Center(
+                                child: Text(
+                                  'Got no places yet,start adding some!',
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                              ),
                   ),
-                  title: Text(greatPlaces.items[index].title),
-                  onTap: () {},
-                ),
-              )
-            : const Center(
-                child: Text(
-                  'Got no places yet,start adding some!',
-                  style: TextStyle(color: Colors.black),
-                ),
-              ),
       ),
     );
   }
