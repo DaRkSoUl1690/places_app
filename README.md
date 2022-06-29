@@ -1,16 +1,10 @@
 # places_app
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+this App uses
+<br>
+1.SQLite
+<br>
+2.Map
+<br>
+3.Providers
+# Screenshot
+<img src="https://raw.githubusercontent.com/DaRkSoUl1690/places_app/master/lib/screenshot/Screenshot%20(2).png" width="250"><img src="https://raw.githubusercontent.com/DaRkSoUl1690/places_app/master/lib/screenshot/Screenshot%20(3).png" width="250"><img src="https://github.com/DaRkSoUl1690/places_app/blob/master/lib/screenshot/Screenshot%20(4).png" width="250"><img src="https://raw.githubusercontent.com/DaRkSoUl1690/places_app/master/lib/screenshot/Screenshot%20(5).png" width="250">
